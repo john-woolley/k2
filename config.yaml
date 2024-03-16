@@ -1,0 +1,170 @@
+portfolio:
+  Therapeutics:
+    
+    89bio:
+      ticker: ETNB
+      description: 89bio is a clinical-stage biopharmaceutical company focused on the development and commercialization of innovative therapies for the treatment of liver and cardio-metabolic diseases.
+      website: https://www.89bio.com/
+      pipeline: https://www.89bio.com/pipeline
+      news: https://www.89bio.com/news
+      ir: https://ir.89bio.com/
+      class: nir-widget--list
+      link_class: nir-widget--news--headline
+      date_class: nir-widget--news--date-time
+    
+    Acumen Pharmaceuticals:
+      ticker: ABOS
+      description: Acumen Pharmaceuticals is a clinical-stage biopharmaceutical company focused on the development of novel therapeutics for the treatment of Alzheimer's disease and other neurodegenerative diseases.
+      website: https://www.acumenpharm.com/
+      pipeline: https://www.acumenpharm.com/pipeline
+      news: https://www.acumenpharm.com/news
+      ir: https://investors.acumenpharm.com/
+      class: nir-widget--list
+      link_class: nir-widget--news--headline
+      date_class: nir-widget--news--date-time
+
+    # Alto Neuroscience:
+    #   ticker: None
+    #   description: Alto Neuroscience is a biotechnology company focused on the development of novel therapeutics for the treatment of neuropsychiatric disorders.
+    #   website: https://www.altoneuroscience.com/
+    #   ir: https://investors.altoneuroscience.com/overview/default.aspx
+    #   class: module-news-latest
+
+    ASLAN Pharmaceuticals:
+      ticker: ASLN
+      description: ASLAN Pharmaceuticals is a clinical-stage immunology focused biopharmaceutical company developing innovative treatments to transform the lives of patients.
+      website: https://www.aslanpharma.com/
+      pipeline: https://www.aslanpharma.com/pipeline
+      news: https://www.aslanpharma.com/news
+      ir: https://ir.aslanpharma.com/
+      class: nirtable
+      link_class: nir-widget--news--headline
+      date_class: nir-widget--news--date-time
+      
+    # Corbus Pharmaceuticals:
+    #   ticker: CRBP
+    #   description: Corbus Pharmaceuticals is a clinical-stage biopharmaceutical company focused on the development and commercialization of novel therapeutics to treat rare, chronic, and serious inflammatory and fibrotic diseases.
+    #   website: https://www.corbuspharma.com/
+    #   pipeline: https://www.corbuspharma.com/pipeline
+    #   news: https://www.corbuspharma.com/news
+    #   ir: https://ir.corbuspharma.com/
+    #   class: single-new
+
+    # Elevation Oncology:
+    #   ticker: ELEV
+    #   description: Elevation Oncology is a clinical-stage biopharmaceutical company focused on the development of precision medicines for patients with genomically defined cancers.
+    #   website: https://www.elevationoncology.com/
+    #   pipeline: https://www.elevationoncology.com/pipeline
+    #   news: https://www.elevationoncology.com/news
+    #   ir: https://investors.elevationoncology.com/
+    #   class: wd_featureboxes_tabbed
+
+    # - Evelo Biosciences:
+    #   - ticker: EVLO
+    #   - description: Evelo Biosciences is a clinical-stage biotechnology company developing a new modality of orally delivered medicines which act on the small intestinal axis to produce systemic therapeutic effects.
+    #   - website: https://www.evelobio.com/
+    #   - pipeline: https://www.evelobio.com/pipeline
+    #   - news: https://www.evelobio.com/news
+    #   - ir: https://ir.evelobio.com/
+
+    # - Harpoon Therapeutics:
+    #   - ticker: HARP
+    #   - description: Harpoon Therapeutics is a clinical-stage immunotherapy company developing a novel class of T cell engagers that harness the power of the body's immune system to treat patients suffering from cancer and other diseases.
+    #   - website: https://www.harpoontx.com/
+    #   - pipeline: https://www.harpoontx.com/pipeline
+    #   - news: https://www.harpoontx.com/news
+    #   - ir: https://ir.harpoontx.com/
+
+    # - Inozyme:
+    #   - ticker: INZY
+    #   - description: Inozyme Pharma is a rare disease biopharmaceutical company developing novel therapeutics for the treatment of diseases of abnormal mineralization impacting the vasculature, soft tissue, and skeleton.
+    #   - website: https://www.inozyme.com/
+    #   - pipeline: https://www.inozyme.com/pipeline
+    #   - news: https://www.inozyme.com/news
+    #   - ir: https://investors.inozyme.com/
+
+    # - Inspirna:
+    #   - ticker: None
+    #   - description: Inspirna is a biotechnology company focused on the development of novel therapeutics for the treatment of respiratory diseases.
+    #   - website: https://www.inspirna.com/
+    #   - ir: https://www.inspirna.com/investors
+
+    # - Metacrine:
+    #   - ticker: MTCR
+    #   - description: Metacrine is a clinical-stage biopharmaceutical company focused on discovering and developing differentiated therapies for patients with liver and gastrointestinal diseases.
+    #   - website: https://www.metacrine.com/
+    #   - pipeline: https://www.metacrine.com/pipeline
+    #   - news: https://www.metacrine.com/news
+    #   - ir: https://ir.metacrine.com/
+
+    # - MindMed:
+    #   - ticker: MNMD
+    #   - description: MindMed is a clinical-stage biopharmaceutical company developing a new generation of medicines for mental health disorders and addiction.
+    #   - website: https://www.mindmed.co/
+    #   - pipeline: https://www.mindmed.co/pipeline
+    #   - news: https://www.mindmed.co/news
+    #   - ir: https://investors.mindmed.co/
+
+    # - Molecular Templates:
+    #   - ticker: MTEM
+    #   - description: Molecular Templates is a clinical-stage biopharmaceutical company focused on the discovery and development of proprietary targeted biologic therapeutics for the treatment of cancer and other serious diseases.
+    #   - website: https://www.mtem.com/
+    #   - pipeline: https://www.mtem.com/pipeline
+    #   - news: https://www.mtem.com/news
+    #   - ir: https://ir.mtem.com/
+
+    # - Oncorus:
+    #   - ticker: ONCR
+    #   - description: Oncorus is a clinical-stage biotechnology company developing a next-generation immunotherapy platform of oncolytic viruses for the treatment of cancer.
+    #   - website: https://www.oncorus.com/
+    #   - pipeline: https://www.oncorus.com/pipeline
+    #   - news: https://www.oncorus.com/news
+    #   - ir: https://ir.oncorus.com/
+
+    # - OncXerna Therapeutics:
+    #   - ticker: None
+    #   - description: OncXerna Therapeutics is a clinical-stage biopharmaceutical company focused on the development of novel therapeutics for the treatment of cancer.
+    #   - website: https://www.oncxerna.com/
+    #   - pipeline: https://www.oncxerna.com/pipeline
+    #   - news: https://www.oncxerna.com/news
+    #   - ir: https://ir.oncxerna.com/
+
+    # - Ribon Therapeutics:
+    #   - ticker: None
+    #   - description: Ribon Therapeutics is a clinical-stage biotechnology company developing first-in-class therapeutics targeting novel enzyme families activated under cellular stress conditions that contribute to disease.
+    #   - website: https://www.ribontherapeutics.com/
+    #   - pipeline: https://www.ribontherapeutics.com/pipeline
+    #   - news: https://www.ribontherapeutics.com/news
+    #   - ir: https://ir.ribontherapeutics.com/
+
+    # - Surface Oncology:
+    #   - ticker: SURF
+    #   - description: Surface Oncology is a clinical-stage immuno-oncology company developing next-generation immunotherapies that target the tumor microenvironment.
+    #   - website: https://www.surfaceoncology.com/
+    #   - pipeline: https://www.surfaceoncology.com/pipeline
+    #   - news: https://www.surfaceoncology.com/news
+    #   - ir: https://ir.surfaceoncology.com/
+
+    # - Tscan Therapeutics:
+    #   - ticker: TCRX
+    #   - description: Tscan Therapeutics is a biotechnology company focused on the development of novel therapeutics for the treatment of cancer.
+    #   - website: https://www.tscan.com/
+    #   - pipeline: https://www.tscan.com/pipeline
+    #   - news: https://www.tscan.com/news
+    #   - ir: https://www.tscan.com/investors
+
+    # - VBI Vaccines:
+    #   - ticker: VBIV
+    #   - description: VBI Vaccines is a commercial-stage biopharmaceutical company developing next-generation infectious disease and immuno-oncology vaccines.
+    #   - website: https://www.vbivaccines.com/
+    #   - pipeline: https://www.vbivaccines.com/pipeline
+    #   - news: https://www.vbivaccines.com/news
+    #   - ir: https://ir.vbivaccines.com/
+
+    # - Vedanta Biosciences:
+    #   - ticker: None
+    #   - description: Vedanta Biosciences is a clinical-stage biopharmaceutical company developing a new category of therapies for immune-mediated diseases based on rationally defined consortia of human microbiome-derived bacteria.
+    #   - website: https://www.vedantabio.com/
+    #   - pipeline: https://www.vedantabio.com/pipeline
+    #   - news: https://www.vedantabio.com/news
+    #   - ir: https://ir.vedantabio.com/
