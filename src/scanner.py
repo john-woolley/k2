@@ -12,7 +12,10 @@ DB_PATH = 'k2.db'
 
 class Scanner:
     service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service)
+    options = webdriver.ChromeOptions()
+    # options.add_argument('--headless')
+    driver = webdriver.Chrome(options=options, service=service)
+    driver.set_window_size(1920, 1080)
 
     def __init__(self):
         self.conn = sqlite3.connect(DB_PATH)
@@ -29,24 +32,63 @@ class Scanner:
         ''')
         self.conn.commit()
 
-    def scan(self, url, parent_class, link_class, date_class, ticker):
+    def _get_data_args(self, data):
+        url = data['ir']
+        parent_class = data['class']
+        date_class = data['date_class']
+        link_class = data['link_class']
+        title_class = data.get('title_class', None) # Optional
+        unwrap = data.get('unwrap_link', False) # Optional
+        return url, parent_class, date_class, link_class, title_class, unwrap
+    
+    def _parse_dates(self, item, date_class):
+        if date_class[0] == '$':
+            tags = item.find_elements(By.TAG_NAME, 'time')
+            dates = [tag.get_attribute("datetime") for tag in tags]
+        else:
+            dates = item.find_elements(By.CLASS_NAME, date_class)
+            dates = [date.text for date in dates]
+        return dates
+    
+    def _insert_links(self, ticker, dates, links, titles=None, unwrap_link=False):
+        for i in range(len(links)):
+            try:
+                date = dates[i]
+                if unwrap_link:
+                    a = links[i].find_element(By.TAG_NAME, 'a')
+                    link = a.get_attribute('href')
+                    title = a.get_attribute('text')
+                else:
+                    link = links[i].get_attribute('href')
+                    title = links[i].get_attribute('text')
+
+                if titles:
+                    title = titles[i].text
+
+                if not link or not title:
+                    continue
+            except IndexError:
+                continue
+
+            self.cursor.execute('''
+                INSERT INTO links (url, date, title, ticker, public)
+                VALUES (?, ?, ?, ?, ?)
+            ''', (link, date, title, ticker, False))
+
+    def scan(self, ticker, data):
+        url, c_parent, c_date, c_link, c_title, unwrap = self._get_data_args(data)
         self.driver.get(url)
         time.sleep(2)
-        items = self.driver.find_elements(By.CLASS_NAME, parent_class)
+        items = self.driver.find_elements(By.CLASS_NAME, c_parent)
         for item in items:
             try:
-                dates = item.find_elements(By.CLASS_NAME, date_class)
-                links = item.find_elements(By.CLASS_NAME, link_class)
-                for i, link_field in enumerate(links):
-                    link = link_field.find_element(By.TAG_NAME, 'a')
-                    link_url = link.get_attribute('href')
-                    link_text = link.text
-                    if not link_url or not link_text:
-                        continue
-                    self.cursor.execute('''
-                        INSERT INTO links (url, date, title, ticker, public)
-                        VALUES (?, ?, ?, ?, ?)
-                    ''', (link_url, dates[i].text, link_text, ticker, True))
+                dates = self._parse_dates(item, c_date)
+                links = item.find_elements(By.CLASS_NAME, c_link)
+                titles = None
+                if c_title:
+                    titles = item.find_elements(By.CLASS_NAME, c_title)
+                if links:
+                    self._insert_links(ticker, dates, links, titles, unwrap)
             except NoSuchElementException:
                 pass
         self.conn.commit()
@@ -60,5 +102,5 @@ if __name__ == '__main__':
         config = yaml.safe_load(f, )
     therapeutics = config['portfolio']['Therapeutics']
     for stock, data in therapeutics.items():
-        s.scan(data['ir'], data['class'], data['link_class'], data['date_class'], stock)
+        s.scan(stock, data)
     s.close()
