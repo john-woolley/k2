@@ -149,6 +149,7 @@ portfolio:
       link_class: nir-widget--news--headline
       date_class: press-year
       unwrap_link: True
+      day_class: press-date
 
     VBI Vaccines:
       ticker: VBIV
