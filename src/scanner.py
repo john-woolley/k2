@@ -55,7 +55,7 @@ class Scanner:
         else:
             dates = item.find_elements(By.CLASS_NAME, date_class)
             dates = [date.text for date in dates]
-        dates = [''.join(filter(lambda x: x in string.printable and "," not in x, date)) for date in dates]
+        dates = [''.join(filter(lambda x: x in string.printable and x != "'", date)) for date in dates]
         casted = pd.to_datetime(dates, format="mixed")
         return casted
     
@@ -76,7 +76,7 @@ class Scanner:
 
                 title = title.strip()
                 
-                if not link or not title:
+                if not link or not title or self._check_exists(link):
                     continue
             except IndexError:
                 continue
@@ -85,6 +85,12 @@ class Scanner:
                 INSERT INTO links (ticker, date, title, url)
                 VALUES (?, ?, ?, ?)
             ''', (ticker, date, title, link))
+
+    def _check_exists(self, url):
+        self.cursor.execute('''
+            SELECT * FROM links WHERE url = ?
+        ''', (url,))
+        return self.cursor.fetchone()
 
     def scan(self, ticker, data):
         url, c_parent, c_date, c_link, c_title, c_day, unwrap = self._get_data_args(data)
