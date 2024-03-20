@@ -11,6 +11,8 @@ class Extracter:
     
     def _get_links(self):
         df = pd.read_sql_query("select * from links", self.conn)
+        summary = pd.read_sql_query("select * from summaries", self.conn)
+        df = df.merge(summary, left_on='id', right_on='link_id', how='left')
         return df
     
     def _write_csv(self, df):

@@ -13,7 +13,6 @@ class Reader:
     service = Service(ChromeDriverManager().install())
     options = webdriver.ChromeOptions()
     # options.add_argument('--headless')
-    options.page_load_strategy = 'eager'
     driver = webdriver.Chrome(options=options, service=service)
     driver.execute_cdp_cmd('Emulation.setScriptExecutionDisabled', {'value': True})
     driver.implicitly_wait(2)
@@ -66,8 +65,8 @@ class Reader:
         for i, link in links.iterrows():
             url = link['url']
             link_id = link['id']
-            article = self._get_article(url)
             if not self._check_exists(link_id):
+                article = self._get_article(url)
                 self._write_article(article, link_id)
                 time.sleep(5)
 
